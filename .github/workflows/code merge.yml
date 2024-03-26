@@ -34,7 +34,7 @@ jobs:
     - name: Create Pull Request for merging temp/develop into staging
       uses: peter-evans/create-pull-request@v3
       with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT }}
           commit-message: "Merge temp/develop into staging"
           title: "Merge temp/develop into staging"
           body: |
