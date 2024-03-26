@@ -31,15 +31,16 @@ jobs:
       run: | 
         git checkout -b temp/staging
         git push origin temp/staging
+    - name: Create Pull Request for merging temp/develop into staging
+      uses: peter-evans/create-pull-request@v3
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Merge temp/develop into staging"
+          title: "Merge temp/develop into staging"
+          body: |
+            This pull request merges changes from temp/develop into the staging branch.
+          branch: staging
+          base: develop
 
-    - name: Merge temp/develop into staging
-      run: |
-          git checkout staging
-          git merge --no-ff temp/develop
-          git push origin staging
+        
 
-    - name: Merge temp/staging into staging
-      run: |
-          git checkout staging
-          git merge --no-ff temp/staging
-          git push origin staging
