@@ -33,13 +33,13 @@ jobs:
         git push origin temp/staging
 
     - name: Merge temp/develop into staging
-        run: |
+      run: |
           git checkout Staging
           git merge --no-ff temp/develop
           git push origin Staging
 
-      - name: Merge temp/staging into staging
-        run: |
+    - name: Merge temp/staging into staging
+      run: |
           git checkout Staging
           git merge --no-ff temp/staging
           git push origin Staging
