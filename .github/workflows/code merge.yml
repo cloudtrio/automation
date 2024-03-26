@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v4
       with:
           repository: cloudtrio/automation
-          token: ${{ secrets.GITHUBTOKEN }}
+          token: ${{ secrets.GIT }}
           ref: develop
  
     - name: Create temporary branch for develop
@@ -25,7 +25,7 @@ jobs:
       uses: actions/checkout@v4
       with: 
           repository: cloudtrio/automation
-          token: ${{ secrets.GITHUBTOKEN }}
+          token: ${{ secrets.GIT }}
           ref: Staging
     - name: Create temporary branch for staging
       run: | 
