@@ -9,12 +9,12 @@ jobs:
   create_temp_branch:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout develop branch
+    - name: Checkout main branch
       uses: actions/checkout@v4
       with:
           repository: cloudtrio/automation
           token: "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"
-          ref: develop
+          ref: main
  
     - name: Create temporary branch for develop
       run: |
