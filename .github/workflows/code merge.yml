@@ -34,7 +34,7 @@ jobs:
 
     - name: Merge temp/develop into staging
       run: |
-          git checkout Staging
+          git checkout staging
           git merge --no-ff temp/develop
           git push origin staging
 
@@ -42,4 +42,4 @@ jobs:
       run: |
           git checkout staging
           git merge --no-ff temp/staging
-          git push origin Staging
+          git push origin staging
