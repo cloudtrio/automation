@@ -1,0 +1,33 @@
+name: Create Temporary Branch and mergenew
+ 
+on:
+  push:
+    branches:
+      - develop
+ 
+jobs:
+  create_temp_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout develop branch
+      uses: actions/checkout@v4
+      with:
+          repository: cloudtrio/automation
+          token: "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"
+          ref: develop
+ 
+    - name: Create temporary branch for develop
+      run: |
+        git checkout -b temp/develop
+        git push origin temp/develop
+ 
+    - name: Checkout staging branch
+      uses: actions/checkout@v4
+      with: 
+          repository: cloudtrio/automation
+          token: "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"
+          ref: Staging
+    - name: Create temporary branch for staging
+      run: | 
+        git checkout -b temp/staging
+        git push origin temp/staging
