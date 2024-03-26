@@ -14,7 +14,7 @@ jobs:
       with:
           repository: cloudtrio/automation
           token: "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"
-          ref: main
+          ref: develop
  
     - name: Create temporary branch for develop
       run: |
