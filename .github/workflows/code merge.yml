@@ -26,7 +26,7 @@ jobs:
       with: 
           repository: cloudtrio/automation
           token: ${{ secrets.GIT }}
-          ref: Staging
+          ref: staging
     - name: Create temporary branch for staging
       run: | 
         git checkout -b temp/staging
