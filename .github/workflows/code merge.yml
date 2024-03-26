@@ -21,7 +21,7 @@ jobs:
         git checkout -b temp/develop
         git push origin temp/develop
  
-    - name: Checkout staging branch
+    - name: Checkout staging branche
       uses: actions/checkout@v4
       with: 
           repository: cloudtrio/automation
