@@ -3,7 +3,7 @@ name: Create Temporary Branch and mergenew
 on:
   push:
     branches:
-      - main
+      - develop
  
 jobs:
   create_temp_branch:
