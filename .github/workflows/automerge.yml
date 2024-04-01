@@ -1,4 +1,4 @@
-name: Create tb and merge.
+name: Create tb
 
 on:
   push:
@@ -21,16 +21,12 @@ jobs:
         git checkout -b temp/develop
         git push origin temp/develop
 
-    - name: Checkout staging branch
-      uses: actions/checkout@v4
-      with: 
-          repository: cloudtrio/automation
-          token: ${{ secrets.GIT }}
-          ref: staging
+    - name: Fetch staging branch
+      run: git fetch origin staging
 
     - name: Create temporary branch for staging
       run: | 
-        git checkout -b temp/staging
+        git checkout -b temp/staging origin/staging
         git push origin temp/staging
 
     - name: Create Pull Request for merging temp/develop into staging
