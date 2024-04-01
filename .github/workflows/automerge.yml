@@ -1,0 +1,90 @@
+name: Create tb and merge
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  create_temp_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v4
+      with:
+          repository: cloudtrio/automation
+          token: ${{ secrets.GIT }}
+          ref: develop
+
+    - name: Create temporary branch for develop
+      run: |
+        git checkout -b temp/develop
+        git push origin temp/develop
+
+    - name: Checkout staging branch
+      uses: actions/checkout@v4
+      with: 
+          repository: cloudtrio/automation
+          token: ${{ secrets.GIT }}
+          ref: staging
+
+    - name: Create temporary branch for staging
+      run: | 
+        git checkout -b temp/staging
+        git push origin temp/staging
+
+    - name: Create Pull Request for merging temp/develop into staging
+      id: create_pr
+      uses: peter-evans/create-pull-request@v3
+      with:
+          token: ${{ secrets.GIT }}
+          commit-message: "Merge temp/develop into staging"
+          title: "Merge temp/develop into staging"
+          body: |
+            This pull request merges changes from temp/develop into the staging branch.
+          branch: staging
+          base: develop
+
+  merge:
+    needs: create_temp_branch
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout staging branch
+      uses: actions/checkout@v4
+      with: 
+          repository: cloudtrio/automation
+          token: ${{ secrets.GIT }}
+          ref: staging
+
+    - name: Merge temporary branch into staging
+      run: |
+        git merge temp/staging --no-ff --no-commit
+        # Check for merge conflicts
+        if [ $? -ne 0 ]; then
+          # Send email notification for merge conflicts
+          # You need to replace the placeholder email with your email configuration
+          echo "Merge conflicts occurred while merging temp/develop into staging." | mail -s "Merge Conflict Notification" user@example.com
+          exit 1
+        fi
+        git push origin staging
+
+    - name: Wait for PR approval
+      uses: octokit/request-action@v2.x
+      id: approve_pr
+      with:
+        route: POST /repos/:owner/:repo/pulls/:pull_number/reviews
+        owner: cloudtrio
+        repo: automation
+        pull_number: ${{ steps.create_pr.outputs.pull_number }}
+        headers: |
+          Authorization: token ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          {
+            "event": "APPROVE"
+          }
+
+    - name: Merge PR if approved
+      if: steps.approve_pr.outputs.status == '200'
+      run: |
+        git merge --no-ff --no-edit ${{ steps.create_pr.outputs.pull_head_ref }}
+        git push origin staging
