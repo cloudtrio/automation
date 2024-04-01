@@ -1,4 +1,4 @@
-name: Create tb
+name: Create tbs
 
 on:
   push:
