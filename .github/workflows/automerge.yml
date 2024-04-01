@@ -1,4 +1,4 @@
-name: Create tb and merge
+name: Create tb and merge.
 
 on:
   push:
