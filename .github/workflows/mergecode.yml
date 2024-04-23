@@ -44,7 +44,7 @@ jobs:
         uses: octokit/rest@v18
         with:
           inputs: |
-            repo: "automation"
+            repo: "cloudtrio/automation"
             pull_number: ${{ github.sha }}  # Use current commit SHA as pull request number
             base: staging
             head: temp-merge
