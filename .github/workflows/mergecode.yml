@@ -16,10 +16,10 @@ jobs:
         run: git checkout -b temp-merge
 
       - name: Fetch latest branches
-        run: git fetch origin dev stage
+        run: git fetch origin develop staging
 
       - name: Merge dev into temp-merge (dry run)
-        run: git merge --dry-run origin/dev
+        run: git merge --dry-run origin/develop
 
       - name: Fail workflow if conflicts with dev detected (optional)
         uses: actions/github-script@v6
@@ -30,7 +30,7 @@ jobs:
             }
 
       - name: Merge dev into temp-merge
-        run: git merge origin/dev
+        run: git merge origin/develop
 
       - name: Address potential conflicts (optional)
         run: |
@@ -44,10 +44,9 @@ jobs:
         uses: octokit/rest@v18
         with:
           inputs: |
-            owner: ${{ github.repository_owner }}
-            repo: ${{ github.repository }}
+            repo: "automation"
             pull_number: ${{ github.sha }}  # Use current commit SHA as pull request number
-            base: stage
+            base: staging
             head: temp-merge
             title: "Merge dev into stage (manually triggered)"  # Adjust title as needed
             body: "This pull request was created upon manual trigger for merging dev changes to stage."  # Adjust body as needed
