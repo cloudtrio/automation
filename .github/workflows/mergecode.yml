@@ -43,7 +43,7 @@ jobs:
       - name: Merge temp-merge to stage (protected branch)
         uses: octokit/rest@v18
         with:
-          inputs:
+          inputs: |
             owner: ${{ github.repository_owner }}
             repo: ${{ github.repository }}
             pull_number: ${{ github.sha }}  # Use current commit SHA as pull request number
