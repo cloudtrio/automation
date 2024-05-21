@@ -10,10 +10,10 @@ touch - Create an empty file or update the timestamp of a file
 cat - Concatenate and display file content
 more - View file content one screen at a time
 less - View file content with backward movement
-head - Display the first part of a file
-tail - Display the last part of a file
+head -n    - Display the first part of a file(n= number of lines you need to display. Ex: for 5 lines head -5)
+tail -n    - Display the last part of a file
 grep - Search for patterns in files
-find - Search for files in a directory hierarchy
+find - Search for files in a directory hierarchy(based on size and name )
 chmod - Change file mode (permissions)
 chown - Change file owner and group
 man - Display manual pages for commands
