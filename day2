@@ -1,0 +1,130 @@
+Filesystem: A  file system  defines how files are  named,  stored, and  retrieved  from a storage device.
+  
+
+/(Root): The top-level directory of the file system.
+/bin: Essential command binaries.
+/boot: Static files of the boot loader.
+/dev: Device files.
+/etc: Host-specific system configuration.
+/home: User home directories.
+/lib: Essential shared libraries and kernel modules.
+/mnt: Mount point for temporarily mounting filesystems.
+/opt: Add-on application software packages.
+/proc: Virtual filesystem providing process and kernel information.
+/root: Home directory for the root user.
+/sbin: System binaries.
+/tmp: Temporary files.
+/usr: Secondary hierarchy for read-only user data.
+/var: Variable data like logs and databases.
+========================================================================
+   Editors
+========================================================================
+vi is powerful text editor in linux  and its improved version is vim
+
+Avaliable Modes in vi text editor:
+  
+1.Normal Mode:         The default mode for navigation and commands.
+2.Insert Mode:         For inserting text. Press i to enter.
+3.Command Mode:        For saving and quitting. Press : to enter.
+=------------------------------------------------------------
+Switching Modes
+-------------------------------------------------------------
+Enter Insert Mode: Press i.
+Return to Normal Mode: Press Esc.
+Enter Command Mode: Press :.
+Basic Commands
+Insert Mode (Type text): you need type smtg
+
+Press i to enter Insert Mode.
+Press Esc to return to Normal Mode.
+-----------------------------------------------
+Navigating in Normal Mode:
+---------------------------------------------------
+h: Move left
+j: Move down
+k: Move up
+l: Move right
+---------------------------------------------------
+Editing in Normal Mode:
+---------------------------------------------------
+x: Delete character under cursor
+dd: Delete the entire line
+u: Undo last change
+yy: Copy (yank) the current line
+p: Paste copied line
+-----------------------------------------------
+Saving and Exiting in Command Mode:
+-----------------------------------------------
+:w: Save the file
+:q: Quit vi
+:wq: Save and quit
+:q!: Quit without saving
+
+  
+sample  Example
+Open a file: vi filename
+Enter Insert Mode: Press i and type your text.
+Return to Normal Mode: Press Esc.
+Save and Quit: Type :wq and press Enter.
+Cheat Sheet
+i: Insert mode (press Esc to exit)
+h, j, k, l: Move cursor (left, down, up, right)
+x: Delete character
+dd: Delete line
+u: Undo
+yy: Copy line
+p: Paste
+:w: Save
+:q: Quit
+:wq: Save and quit
+:q!: Quit without saving
+
+============================================
+  The Linux Process States
+=============================================
+In Linux, a process is an instance of executing a program or command. While these processes exist, they’ll be in one of the five possible states:
+
+Running or Runnable (R)
+Uninterruptible Sleep (D)
+Interruptable Sleep (S)
+Stopped (T)
+Zombie (Z)
+
+To display process state using ps, let’s run the ps command to include a column that tells us the state of the process:
+===========================
+Process Management Commands
+===========================
+ps: Displays information about active processes.
+top: Real-time process monitoring.
+htop: Enhanced version of top.
+kill: Sends a signal to a process, usually to terminate it.
+killall: Sends a signal to all processes matching the name.
+nice: Starts a process with a specified priority.
+renice: Changes the priority of a running process.
+bg: Resumes a suspended job in the background.
+fg: Brings a background job to the foreground.
+======================
+Signals
+======================
+SIGHUP (1): Hangup detected on controlling terminal or death of controlling process.
+SIGINT (2): Interrupt from keyboard (usually Ctrl+C).
+SIGKILL (9): Kill signal; forcefully stops a process.
+SIGTERM (15): Termination signal; requests a process to stop.
+SIGSTOP (19): Stops the process.
+=====================
+Process Scheduling
+====================
+Scheduler: The part of the kernel that decides which process runs next.
+Context Switching: The process of saving the state of a CPU such that it can be restored and execution resumed from the same point later.
+Priority and Niceness
+Priority: Determines the order in which processes are scheduled.
+Nice Value: Ranges from -20 (highest priority) to 19 (lowest priority). Can be set using nice and renice.
+
+  
+  
+
+
+
+  
+
+  
