@@ -16,6 +16,10 @@ Filesystem: A  file system  defines how files are  named,  stored, and  retrieve
 /tmp: Temporary files.
 /usr: Secondary hierarchy for read-only user data.
 /var: Variable data like logs and databases.
+
+filesystem::: ext4,ext6 ....nfs .
+
+
 ========================================================================
    Editors
 ========================================================================
@@ -111,6 +115,8 @@ SIGINT (2): Interrupt from keyboard (usually Ctrl+C).
 SIGKILL (9): Kill signal; forcefully stops a process.
 SIGTERM (15): Termination signal; requests a process to stop.
 SIGSTOP (19): Stops the process.
+
+kill -9 pid
 =====================
 Process Scheduling
 ====================
@@ -119,6 +125,27 @@ Context Switching: The process of saving the state of a CPU such that it can be 
 Priority and Niceness
 Priority: Determines the order in which processes are scheduled.
 Nice Value: Ranges from -20 (highest priority) to 19 (lowest priority). Can be set using nice and renice.
+
+=========================================
+Init run levels
+=========================================
+A runlevel, in other words, can be defined as a preset single-digit integer for defining the operating state of your LINUX or UNIX-based operating system. Each runlevel designates a different system configuration and allows access to different combinations of processes.
+Runlevel	Description
+0	            System halt i.e., the system can be safely powered off with no activity.
+1	            Single user mode.
+2	            Multiple user mode with no NFS (network file system).
+3	            Multiple user modes under the command line interface and not under the graphical user interface.
+4	            User-definable.
+5	            Multiple user mode under GUI (graphical user interface) and this is the standard runlevel for most of the LINUX-based systems.
+6	            Reboot which is used to restart the system.
+
+Ex: syntax :: sudo init 6
+===============================================================================================================================================
+advance commands
+========================================
+cowsay "your text"
+figlet "your text"
+
 
   
   
