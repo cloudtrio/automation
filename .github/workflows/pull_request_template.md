@@ -13,8 +13,8 @@
 - [ ] I have included before-and-after screenshots or visual regression tests (if applicable).
 
 **Image Uploads:**
-
 - You can upload relevant images (screenshots, diagrams, etc.) by dragging and dropping them into this pull request description.
+  
 
 **Reviewer Checklist:**
 
@@ -30,8 +30,7 @@
 - [ ] I have analyzed the potential impact of this change on infrastructure (quality, performance, reliability, security, maintainability). (Details in "Additional Notes")
 - [ ] I have updated infrastructure configuration files (if applicable). 
 - [ ] I have tested the infrastructure changes in a dev environment (if applicable).
-* **Code Coverage from SonarQube:** #[ISSUE_ID] (Replace with the actual issue ID)
-* **Type of change:** (Bug fix, Feature addition, Dependency update, etc.)
+* **Code Coverage from SonarQube:** #[COVERAGE] (Replace with the sonar coverage report)
 
 **Additional Notes:**
 
