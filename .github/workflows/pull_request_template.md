@@ -7,7 +7,7 @@
 
 **Developer Checklist:**
 
-- [ ] I have been thoroughly checked and verified in the local environment deployment.
+- [ ] I have been throughly  checked and verified in the local environment deployment.
 - [ ] I have  written the and run all tests and confirmed they pass (frontend, backend).
 - [ ] I have reviewed the code coverage report from SonarQube (if applicable).
 - [ ] I have included before-and-after screenshots or visual regression tests (if applicable).
