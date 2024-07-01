@@ -17,7 +17,7 @@ Filesystem: A  file system  defines how files are  named,  stored, and  retrieve
 /usr: Secondary hierarchy for read-only user data.
 /var: Variable data like logs and databases.
 
-filesystem::: ext4,ext6 ....nfs .
+filesystem::: ext4,ext6 ....nfs . 
 
 
 ========================================================================
