@@ -1,4 +1,5 @@
 import boto3
+#devops
 def get_running_instances():
 
     ec2_client = boto3.client("ec2", region_name="us-west-2")

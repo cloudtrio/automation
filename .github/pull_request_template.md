@@ -7,14 +7,21 @@
 
 **Developer Checklist:**
 
-- [ ] I have been throughly  checked and verified in the local environment deployment.
-- [ ] I have  written the and run all tests and confirmed they pass (frontend, backend).
+- [ ] I have written unit tests for my changes.
+- [ ] I have updated integration tests (if applicable).
+- [ ] I have run all tests and confirmed they pass (frontend, backend).
 - [ ] I have reviewed the code coverage report from SonarQube (if applicable).
 - [ ] I have included before-and-after screenshots or visual regression tests (if applicable).
 
+**Infrastructure Checklist:**
+
+- [ ] I have analyzed the potential impact of this change on infrastructure (quality, performance, reliability, security, maintainability). (Details in "Additional Notes")
+- [ ] I have updated infrastructure configuration files (if applicable). (Details in "Additional Notes")
+- [ ] I have tested the infrastructure changes in a staging environment (if applicable). (Details in "Additional Notes")
+
 **Image Uploads:**
+
 - You can upload relevant images (screenshots, diagrams, etc.) by dragging and dropping them into this pull request description.
-  
 
 **Reviewer Checklist:**
 
@@ -24,13 +31,6 @@
 - [ ] I have visually inspected any screenshots or visual regression tests (if applicable).
 - [ ] I have reviewed the infrastructure impact analysis (if applicable).
 - [ ] I have reviewed the updated infrastructure configuration files (if applicable).
-
-**Infrastructure Checklist:**
-
-- [ ] I have analyzed the potential impact of this change on infrastructure (quality, performance, reliability, security, maintainability). (Details in "Additional Notes")
-- [ ] I have updated infrastructure configuration files (if applicable). 
-- [ ] I have tested the infrastructure changes in a dev environment (if applicable).
-* **Code Coverage from SonarQube:** #[COVERAGE] (Replace with the sonar coverage report)
 
 **Additional Notes:**
 
